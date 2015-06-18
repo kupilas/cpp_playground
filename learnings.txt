@@ -1,0 +1,2 @@
+1. Creating cocos project with a terminal:
+cocos new -l cpp -p pl.kupilas.cocoslearningproject -d /Users/matt/dev/testlab/cpp_playground/CocosLearningProject CocosLearningProject
