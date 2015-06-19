@@ -7,6 +7,7 @@
 //
 
 #include "TestingSceneOne.h"
+#include "Player.h"
 
 USING_NS_CC;
 
@@ -26,7 +27,8 @@ bool TestingSceneOne::init()
         return false;
     }
     
-    auto sprite = Sprite::create("HelloWorld.png");
+    auto sprite = Player::createWithFileName("HelloWorld.png");
+//    auto sprite = Sprite::create("HelloWorld.png");
     sprite->setAnchorPoint(Vec2(0, 0));
     sprite->setPosition(0, 0);
     

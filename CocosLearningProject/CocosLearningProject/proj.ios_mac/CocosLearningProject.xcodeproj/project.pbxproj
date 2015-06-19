@@ -64,6 +64,8 @@
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		C966A3711B334360006FBEE9 /* TestingSceneOne.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */; };
 		C966A3721B334360006FBEE9 /* TestingSceneOne.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */; };
+		C9CA56261B34B0BB00DAE58E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56241B34B0BB00DAE58E /* Player.cpp */; };
+		C9CA56271B34B0BB00DAE58E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56241B34B0BB00DAE58E /* Player.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -157,6 +159,8 @@
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestingSceneOne.cpp; sourceTree = "<group>"; };
 		C966A3701B334360006FBEE9 /* TestingSceneOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingSceneOne.h; sourceTree = "<group>"; };
+		C9CA56241B34B0BB00DAE58E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		C9CA56251B34B0BB00DAE58E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -289,6 +293,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C937B6991B335F7B008536E8 /* Entities */,
 				C966A3731B334371006FBEE9 /* Scenes */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
@@ -343,6 +348,15 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		C937B6991B335F7B008536E8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C9CA56241B34B0BB00DAE58E /* Player.cpp */,
+				C9CA56251B34B0BB00DAE58E /* Player.h */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
 		};
 		C966A3731B334371006FBEE9 /* Scenes */ = {
 			isa = PBXGroup;
@@ -502,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				C9CA56261B34B0BB00DAE58E /* Player.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -518,6 +533,7 @@
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				C966A3721B334360006FBEE9 /* TestingSceneOne.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				C9CA56271B34B0BB00DAE58E /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

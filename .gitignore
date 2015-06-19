@@ -1,1 +1,5 @@
 *.out
+CocosLearningProject/CocosLearningProject/cocos2d/build
+CocosLearningProject/CocosLearningProject/proj.ios_mac/CocosLearningProject.xcodeproj/project.xcworkspace
+CocosLearningProject/CocosLearningProject/proj.ios_mac/CocosLearningProject.xcodeproj/xcuserdata/matt.xcuserdatad/xcdebugger
+CocosLearningProject/CocosLearningProject/proj.ios_mac/CocosLearningProject.xcodeproj/xcuserdata/matt.xcuserdatad
