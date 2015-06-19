@@ -16,7 +16,7 @@ USING_NS_CC;
 class Player : public cocos2d::Sprite
 {
 public:
-    static Player* createWithFileName(char *fileName);
+    static Player* createWithFileName(const std::string& filename);
     
 };
 

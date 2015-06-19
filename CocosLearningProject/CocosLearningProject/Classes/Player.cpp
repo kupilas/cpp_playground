@@ -10,9 +10,9 @@
 
 
 
-Player* Player::createWithFileName(char *fileName) {
+Player* Player::createWithFileName(const std::string& filename) {
     auto sprite = new Player;
-    if(sprite && sprite->initWithFile(fileName)) {
+    if(sprite && sprite->initWithFile(filename)) {
         sprite->autorelease();
         return sprite;
     }
