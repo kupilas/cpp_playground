@@ -27,40 +27,14 @@ bool TestingSceneOne::init()
         return false;
     }
     
-    auto sprite = Player::createWithFileName("HelloWorld.png");
-//    auto sprite = Sprite::create("HelloWorld.png");
-    sprite->setAnchorPoint(Vec2(0, 0));
-    sprite->setPosition(0, 0);
+    auto player = Player::createWithFileName("HelloWorld.png");
+    player->initPlayer();
     
-    this->addChild(sprite, 0);
+    // adding player as a child to the scene
+    this->addChild(player, 0);
     
-    auto eventListener = EventListenerKeyboard::create();
-    
-    
-    eventListener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event){
-        
-        Vec2 loc = event->getCurrentTarget()->getPosition();
-        switch(keyCode){
-            case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
-            case EventKeyboard::KeyCode::KEY_A:
-                event->getCurrentTarget()->setPosition(--loc.x,loc.y);
-                break;
-            case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
-            case EventKeyboard::KeyCode::KEY_D:
-                event->getCurrentTarget()->setPosition(++loc.x,loc.y);
-                break;
-            case EventKeyboard::KeyCode::KEY_UP_ARROW:
-            case EventKeyboard::KeyCode::KEY_W:
-                event->getCurrentTarget()->setPosition(loc.x,++loc.y);
-                break;
-            case EventKeyboard::KeyCode::KEY_DOWN_ARROW:
-            case EventKeyboard::KeyCode::KEY_S:
-                event->getCurrentTarget()->setPosition(loc.x,--loc.y);
-                break;
-        }
-    };
-    
-    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(eventListener, sprite);
+    // adding keyboard listener to player
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(player->createKeyboardListener(), player);
     
     return true;
 }
