@@ -12,6 +12,8 @@ void Player::initPlayer()
 {
     this->setAnchorPoint(Vec2(0, 0));
     this->setPosition(0, 0);
+    
+    keyboardListener = createKeyboardListener();
 }
 
 Player* Player::createWithFileName(const std::string& filename) {
@@ -24,8 +26,14 @@ Player* Player::createWithFileName(const std::string& filename) {
     return nullptr;
 }
 
+EventListenerKeyboard* Player::getKeyboardListener(){
+    return keyboardListener;
+}
+
 EventListenerKeyboard* Player::createKeyboardListener(){
     auto eventListener = EventListenerKeyboard::create();
+    
+    
     
     eventListener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event){
         

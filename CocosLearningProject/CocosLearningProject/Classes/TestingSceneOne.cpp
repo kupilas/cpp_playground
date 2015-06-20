@@ -17,7 +17,12 @@ Scene* TestingSceneOne::createScene()
     auto layer = TestingSceneOne::create();
     scene->addChild(layer);
     
+    
     return scene;
+}
+
+void TestingSceneOne::update(float delta){
+    CCLOG("update test");
 }
 
 bool TestingSceneOne::init()
@@ -34,7 +39,10 @@ bool TestingSceneOne::init()
     this->addChild(player, 0);
     
     // adding keyboard listener to player
-    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(player->createKeyboardListener(), player);
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(player->getKeyboardListener(), player);
+    
+    // acces to game loop
+    scheduleUpdate();
     
     return true;
 }

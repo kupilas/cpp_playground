@@ -15,11 +15,14 @@ USING_NS_CC;
 
 class Player : public cocos2d::Sprite
 {
+private:
+    EventListenerKeyboard* keyboardListener;
+    EventListenerKeyboard* createKeyboardListener();
     
 public:
     static Player* createWithFileName(const std::string& filename);
     void initPlayer();
-    EventListenerKeyboard* createKeyboardListener();
+    EventListenerKeyboard* getKeyboardListener();
     
 };
 
