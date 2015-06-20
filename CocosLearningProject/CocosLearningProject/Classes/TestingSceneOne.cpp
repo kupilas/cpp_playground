@@ -7,7 +7,7 @@
 //
 
 #include "TestingSceneOne.h"
-#include "Player.h"
+
 
 USING_NS_CC;
 
@@ -22,8 +22,9 @@ Scene* TestingSceneOne::createScene()
 }
 
 void TestingSceneOne::update(float delta){
-    CCLOG("update test");
+//    CCLOG("update test");
 }
+
 
 bool TestingSceneOne::init()
 {

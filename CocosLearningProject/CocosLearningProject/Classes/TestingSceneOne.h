@@ -10,6 +10,7 @@
 #define __CocosLearningProject__TestingSceneOne__
 
 #include "cocos2d.h"
+#include "Player.h"
 
 USING_NS_CC; 
 
