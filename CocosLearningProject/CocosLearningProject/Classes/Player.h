@@ -16,7 +16,7 @@ USING_NS_CC;
 class Player : public cocos2d::Sprite
 {
 private:
-    
+    bool rightDown, leftDown;
     EventListenerKeyboard* keyboardListener;
     EventListenerKeyboard* createKeyboardListener();
     void testLogEvent();
@@ -24,6 +24,7 @@ private:
 public:
     static Player* createWithFileName(const std::string& filename);
     void initPlayer();
+    void update();
     EventListenerKeyboard* getKeyboardListener();
     
 };

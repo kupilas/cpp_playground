@@ -16,6 +16,8 @@ USING_NS_CC;
 
 class TestingSceneOne : public cocos2d::Layer
 {
+private:
+    Player* player;
 public:
     static cocos2d::Scene* createScene();
     virtual bool init();

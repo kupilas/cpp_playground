@@ -22,6 +22,7 @@ Scene* TestingSceneOne::createScene()
 }
 
 void TestingSceneOne::update(float delta){
+    player->update();
 //    CCLOG("update test");
 }
 
@@ -33,7 +34,7 @@ bool TestingSceneOne::init()
         return false;
     }
     
-    auto player = Player::createWithFileName("HelloWorld.png");
+    player = Player::createWithFileName("HelloWorld.png");
     player->initPlayer();
     
     // adding player as a child to the scene

@@ -10,6 +10,7 @@
 
 void Player::initPlayer()
 {
+    rightDown = false;
     this->setAnchorPoint(Vec2(0, 0));
     this->setPosition(0, 0);
     
@@ -30,14 +31,21 @@ EventListenerKeyboard* Player::getKeyboardListener(){
     return keyboardListener;
 }
 
+void Player::update(){
+    if(rightDown){
+        setPositionX(getPositionX() + 5);
+    }
+    if(leftDown){
+        setPositionX(getPositionX() - 5);
+    }
+}
+
 void Player::testLogEvent(){
     CCLOG("test log event");
 }
 
 EventListenerKeyboard* Player::createKeyboardListener(){
     auto eventListener = EventListenerKeyboard::create();
-    
-    
     
     eventListener->onKeyPressed = [&](EventKeyboard::KeyCode keyCode, Event* event){
         
@@ -46,11 +54,37 @@ EventListenerKeyboard* Player::createKeyboardListener(){
             case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
             case EventKeyboard::KeyCode::KEY_A:
                 event->getCurrentTarget()->setPosition(--loc.x,loc.y);
+                leftDown = true;
                 break;
             case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
             case EventKeyboard::KeyCode::KEY_D:
                 event->getCurrentTarget()->setPosition(++loc.x,loc.y);
-                testLogEvent();
+                rightDown = true;
+                break;
+            case EventKeyboard::KeyCode::KEY_UP_ARROW:
+            case EventKeyboard::KeyCode::KEY_W:
+                event->getCurrentTarget()->setPosition(loc.x,++loc.y);
+                break;
+            case EventKeyboard::KeyCode::KEY_DOWN_ARROW:
+            case EventKeyboard::KeyCode::KEY_S:
+                event->getCurrentTarget()->setPosition(loc.x,--loc.y);
+                break;
+        }
+    };
+
+    eventListener->onKeyReleased = [&](EventKeyboard::KeyCode keyCode, Event* event){
+        
+        Vec2 loc = event->getCurrentTarget()->getPosition();
+        switch(keyCode){
+            case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
+            case EventKeyboard::KeyCode::KEY_A:
+                event->getCurrentTarget()->setPosition(--loc.x,loc.y);
+                leftDown = false;
+                break;
+            case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
+            case EventKeyboard::KeyCode::KEY_D:
+                event->getCurrentTarget()->setPosition(++loc.x,loc.y);
+                rightDown = false;
                 break;
             case EventKeyboard::KeyCode::KEY_UP_ARROW:
             case EventKeyboard::KeyCode::KEY_W:
