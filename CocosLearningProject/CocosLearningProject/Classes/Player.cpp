@@ -30,12 +30,16 @@ EventListenerKeyboard* Player::getKeyboardListener(){
     return keyboardListener;
 }
 
+void Player::testLogEvent(){
+    CCLOG("test log event");
+}
+
 EventListenerKeyboard* Player::createKeyboardListener(){
     auto eventListener = EventListenerKeyboard::create();
     
     
     
-    eventListener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event){
+    eventListener->onKeyPressed = [&](EventKeyboard::KeyCode keyCode, Event* event){
         
         Vec2 loc = event->getCurrentTarget()->getPosition();
         switch(keyCode){
@@ -46,6 +50,7 @@ EventListenerKeyboard* Player::createKeyboardListener(){
             case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
             case EventKeyboard::KeyCode::KEY_D:
                 event->getCurrentTarget()->setPosition(++loc.x,loc.y);
+                testLogEvent();
                 break;
             case EventKeyboard::KeyCode::KEY_UP_ARROW:
             case EventKeyboard::KeyCode::KEY_W:
