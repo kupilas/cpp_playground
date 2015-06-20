@@ -7,10 +7,12 @@
 //
 
 #include "Player.h"
+#include "Constants.h"
+
 
 void Player::initPlayer()
 {
-    rightDown = false;
+    resetDownBools();
     this->setAnchorPoint(Vec2(0, 0));
     this->setPosition(0, 0);
     
@@ -33,10 +35,16 @@ EventListenerKeyboard* Player::getKeyboardListener(){
 
 void Player::update(){
     if(rightDown){
-        setPositionX(getPositionX() + 5);
+        setPositionX(getPositionX() + PLAYER_SPEED);
     }
     if(leftDown){
-        setPositionX(getPositionX() - 5);
+        setPositionX(getPositionX() - PLAYER_SPEED);
+    }
+    if(upDown){
+        setPositionY(getPositionY() + PLAYER_SPEED);
+    }
+    if(downDown){
+        setPositionY(getPositionY() - PLAYER_SPEED);
     }
 }
 
@@ -53,21 +61,19 @@ EventListenerKeyboard* Player::createKeyboardListener(){
         switch(keyCode){
             case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
             case EventKeyboard::KeyCode::KEY_A:
-                event->getCurrentTarget()->setPosition(--loc.x,loc.y);
                 leftDown = true;
                 break;
             case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
             case EventKeyboard::KeyCode::KEY_D:
-                event->getCurrentTarget()->setPosition(++loc.x,loc.y);
                 rightDown = true;
                 break;
             case EventKeyboard::KeyCode::KEY_UP_ARROW:
             case EventKeyboard::KeyCode::KEY_W:
-                event->getCurrentTarget()->setPosition(loc.x,++loc.y);
+                upDown = true;
                 break;
             case EventKeyboard::KeyCode::KEY_DOWN_ARROW:
             case EventKeyboard::KeyCode::KEY_S:
-                event->getCurrentTarget()->setPosition(loc.x,--loc.y);
+                downDown = true;
                 break;
         }
     };
@@ -78,26 +84,31 @@ EventListenerKeyboard* Player::createKeyboardListener(){
         switch(keyCode){
             case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
             case EventKeyboard::KeyCode::KEY_A:
-                event->getCurrentTarget()->setPosition(--loc.x,loc.y);
                 leftDown = false;
                 break;
             case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
             case EventKeyboard::KeyCode::KEY_D:
-                event->getCurrentTarget()->setPosition(++loc.x,loc.y);
                 rightDown = false;
                 break;
             case EventKeyboard::KeyCode::KEY_UP_ARROW:
             case EventKeyboard::KeyCode::KEY_W:
-                event->getCurrentTarget()->setPosition(loc.x,++loc.y);
+                upDown = false;
                 break;
             case EventKeyboard::KeyCode::KEY_DOWN_ARROW:
             case EventKeyboard::KeyCode::KEY_S:
-                event->getCurrentTarget()->setPosition(loc.x,--loc.y);
+                downDown = false;
                 break;
         }
     };
     
     return eventListener;
+}
+
+void Player::resetDownBools(){
+    rightDown = false;
+    leftDown = false;
+    upDown = false;
+    downDown = false;
 }
 
 

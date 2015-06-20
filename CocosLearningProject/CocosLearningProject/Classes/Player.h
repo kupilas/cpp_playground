@@ -16,8 +16,10 @@ USING_NS_CC;
 class Player : public cocos2d::Sprite
 {
 private:
-    bool rightDown, leftDown;
+    bool rightDown, leftDown, upDown, downDown;
     EventListenerKeyboard* keyboardListener;
+    
+    void resetDownBools();
     EventListenerKeyboard* createKeyboardListener();
     void testLogEvent();
     
