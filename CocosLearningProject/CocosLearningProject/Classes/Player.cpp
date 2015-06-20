@@ -29,10 +29,6 @@ Player* Player::createWithFileName(const std::string& filename) {
     return nullptr;
 }
 
-EventListenerKeyboard* Player::getKeyboardListener(){
-    return keyboardListener;
-}
-
 void Player::update(){
     if(rightDown){
         setPositionX(getPositionX() + PLAYER_SPEED);
@@ -46,10 +42,6 @@ void Player::update(){
     if(downDown){
         setPositionY(getPositionY() - PLAYER_SPEED);
     }
-}
-
-void Player::testLogEvent(){
-    CCLOG("test log event");
 }
 
 EventListenerKeyboard* Player::createKeyboardListener(){

@@ -15,19 +15,25 @@ USING_NS_CC;
 
 class Player : public cocos2d::Sprite
 {
+    
+public:
+    static Player* createWithFileName(const std::string& filename);
+    void initPlayer();
+    void update();
+    
+    /**
+     *     getters and setters
+     **/
+    EventListenerKeyboard* getKeyboardListener(){
+        return keyboardListener;
+    }
+    
 private:
     bool rightDown, leftDown, upDown, downDown;
     EventListenerKeyboard* keyboardListener;
     
     void resetDownBools();
     EventListenerKeyboard* createKeyboardListener();
-    void testLogEvent();
-    
-public:
-    static Player* createWithFileName(const std::string& filename);
-    void initPlayer();
-    void update();
-    EventListenerKeyboard* getKeyboardListener();
     
 };
 
