@@ -9,6 +9,10 @@
 #include "Player.h"
 #include "Constants.h"
 
+// just testing some macros for education purposes
+# define LEFT_ARROW EventKeyboard::KeyCode::KEY_LEFT_ARROW
+///////////////////////////////////////////////////////////
+
 
 void Player::initPlayer()
 {
@@ -49,7 +53,6 @@ EventListenerKeyboard* Player::createKeyboardListener(){
     
     eventListener->onKeyPressed = [&](EventKeyboard::KeyCode keyCode, Event* event){
         
-        Vec2 loc = event->getCurrentTarget()->getPosition();
         switch(keyCode){
             case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
             case EventKeyboard::KeyCode::KEY_A:
@@ -72,9 +75,8 @@ EventListenerKeyboard* Player::createKeyboardListener(){
 
     eventListener->onKeyReleased = [&](EventKeyboard::KeyCode keyCode, Event* event){
         
-        Vec2 loc = event->getCurrentTarget()->getPosition();
         switch(keyCode){
-            case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
+            case LEFT_ARROW: // macro test
             case EventKeyboard::KeyCode::KEY_A:
                 leftDown = false;
                 break;
