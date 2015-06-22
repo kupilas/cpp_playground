@@ -21,9 +21,17 @@ Scene* TestingSceneOne::createScene()
     return scene;
 }
 
+bool TestingSceneOne::spritesCollide(Sprite *s1, Sprite* s2){
+    return s1->getBoundingBox().intersectsRect(s2->getBoundingBox());
+}
+
 void TestingSceneOne::update(float delta){
     player->update();
-//    CCLOG("update test");
+    
+    // collision test
+    if(spritesCollide(player, colidingSprite)){
+        CCLOG("collision");
+    }
 }
 
 
@@ -39,6 +47,11 @@ bool TestingSceneOne::init()
     
     // adding player as a child to the scene
     this->addChild(player, 0);
+    
+    colidingSprite = Sprite::create("HelloWorld.png");
+    colidingSprite->setAnchorPoint(Vec2(0, 0));
+    colidingSprite->setPosition(500, 500);
+    this->addChild(colidingSprite);
     
     // adding keyboard listener to player
     this->_eventDispatcher->addEventListenerWithSceneGraphPriority(player->getKeyboardListener(), player);

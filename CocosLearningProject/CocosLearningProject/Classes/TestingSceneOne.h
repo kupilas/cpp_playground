@@ -18,6 +18,8 @@ class TestingSceneOne : public cocos2d::Layer
 {
 private:
     Player* player;
+    Sprite* colidingSprite;
+    bool spritesCollide(Sprite *s1, Sprite* s2);
 public:
     static cocos2d::Scene* createScene();
     virtual bool init();
