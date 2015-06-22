@@ -21,6 +21,13 @@ void Player::initPlayer()
     this->setPosition(0, 0);
     
     keyboardListener = createKeyboardListener();
+    
+}
+
+void Player::runFadeToAction()
+{
+    auto fadeToAction = FadeTo::create(1.5, 30);
+    this->runAction(fadeToAction);
 }
 
 Player* Player::createWithFileName(const std::string& filename) {
@@ -54,6 +61,9 @@ EventListenerKeyboard* Player::createKeyboardListener(){
     eventListener->onKeyPressed = [&](EventKeyboard::KeyCode keyCode, Event* event){
         
         switch(keyCode){
+            case EventKeyboard::KeyCode::KEY_SPACE:
+                this->runFadeToAction();
+                break;
             case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
             case EventKeyboard::KeyCode::KEY_A:
                 leftDown = true;

@@ -33,6 +33,7 @@ private:
     EventListenerKeyboard* keyboardListener;
     
     void resetDownBools();
+    void runFadeToAction();
     EventListenerKeyboard* createKeyboardListener();
     
 };
