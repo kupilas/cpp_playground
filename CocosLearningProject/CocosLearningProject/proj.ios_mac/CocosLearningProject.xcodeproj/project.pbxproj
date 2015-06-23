@@ -62,6 +62,8 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		C93C112F1B39EB9800DAF6E6 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C93C112D1B39EB9800DAF6E6 /* MenuScene.cpp */; };
+		C93C11301B39EB9800DAF6E6 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C93C112D1B39EB9800DAF6E6 /* MenuScene.cpp */; };
 		C966A3711B334360006FBEE9 /* TestingSceneOne.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */; };
 		C966A3721B334360006FBEE9 /* TestingSceneOne.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */; };
 		C9CA56261B34B0BB00DAE58E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56241B34B0BB00DAE58E /* Player.cpp */; };
@@ -157,6 +159,8 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C93C112D1B39EB9800DAF6E6 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
+		C93C112E1B39EB9800DAF6E6 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		C94FA6981B359605006DA70D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestingSceneOne.cpp; sourceTree = "<group>"; };
 		C966A3701B334360006FBEE9 /* TestingSceneOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingSceneOne.h; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */,
 				C966A3701B334360006FBEE9 /* TestingSceneOne.h */,
+				C93C112D1B39EB9800DAF6E6 /* MenuScene.cpp */,
+				C93C112E1B39EB9800DAF6E6 /* MenuScene.h */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				C93C112F1B39EB9800DAF6E6 /* MenuScene.cpp in Sources */,
 				C9CA56261B34B0BB00DAE58E /* Player.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -532,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				C93C11301B39EB9800DAF6E6 /* MenuScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				C966A3721B334360006FBEE9 /* TestingSceneOne.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
