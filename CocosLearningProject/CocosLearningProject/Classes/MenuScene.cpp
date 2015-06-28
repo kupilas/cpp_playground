@@ -13,6 +13,33 @@
 
 USING_NS_CC;
 
+
+bool MenuScene::init()
+{
+    if ( !Layer::init() )
+    {
+        return false;
+    }
+    
+    initHttpButton();
+    initNewSceneButton();
+    
+    return true;
+}
+
+Scene* MenuScene::createScene()
+{
+    auto scene = Scene::create();
+    auto layer = MenuScene::create();
+    scene->addChild(layer);
+    
+    auto label = Label::createWithSystemFont("my simple menu", "Arial", 20);
+    label->setPosition(500, 500);
+    scene->addChild(label);
+    
+    return scene;
+}
+
 void MenuScene::makeHttpRequest(){
     auto request = new cocos2d::network::HttpRequest();
     request->setUrl("https://www.google.com");
@@ -79,35 +106,4 @@ void MenuScene::initHttpButton(){
     });
     button->cocos2d::Node::setPosition(300, 300);
     this->addChild(button);
-}
-
-
-bool MenuScene::init()
-{
-    if ( !Layer::init() )
-    {
-        return false;
-    }
-    
-    initHttpButton();
-    initNewSceneButton();
-    
-    return true;
-}
-
-Scene* MenuScene::createScene()
-{
-    auto scene = Scene::create();
-    auto layer = MenuScene::create();
-    scene->addChild(layer);
-    
-    auto label = Label::createWithSystemFont("my simple menu", "Arial", 20);
-    label->setPosition(500, 500);
-    scene->addChild(label);
-    
-    return scene;
-}
-
-void MenuScene::onHttpRequestCompleted(){
-    CCLOG("onHttpRequestCompleted");
 }

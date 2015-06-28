@@ -14,7 +14,6 @@
 
 class MenuScene : public cocos2d::Layer{
 private:
-    void onHttpRequestCompleted();
     void makeHttpRequest();
     void initHttpButton();
     void initNewSceneButton();
