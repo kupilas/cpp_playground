@@ -66,6 +66,8 @@
 		C93C11301B39EB9800DAF6E6 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C93C112D1B39EB9800DAF6E6 /* MenuScene.cpp */; };
 		C966A3711B334360006FBEE9 /* TestingSceneOne.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */; };
 		C966A3721B334360006FBEE9 /* TestingSceneOne.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */; };
+		C97D62781B49493100C477E2 /* PhysicsSene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C97D62761B49493100C477E2 /* PhysicsSene.cpp */; };
+		C97D62791B49493100C477E2 /* PhysicsSene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C97D62761B49493100C477E2 /* PhysicsSene.cpp */; };
 		C9CA56261B34B0BB00DAE58E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56241B34B0BB00DAE58E /* Player.cpp */; };
 		C9CA56271B34B0BB00DAE58E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56241B34B0BB00DAE58E /* Player.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -164,6 +166,8 @@
 		C94FA6981B359605006DA70D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C966A36F1B334360006FBEE9 /* TestingSceneOne.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestingSceneOne.cpp; sourceTree = "<group>"; };
 		C966A3701B334360006FBEE9 /* TestingSceneOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingSceneOne.h; sourceTree = "<group>"; };
+		C97D62761B49493100C477E2 /* PhysicsSene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSene.cpp; sourceTree = "<group>"; };
+		C97D62771B49493100C477E2 /* PhysicsSene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSene.h; sourceTree = "<group>"; };
 		C9CA56241B34B0BB00DAE58E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		C9CA56251B34B0BB00DAE58E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -373,6 +377,8 @@
 				C966A3701B334360006FBEE9 /* TestingSceneOne.h */,
 				C93C112D1B39EB9800DAF6E6 /* MenuScene.cpp */,
 				C93C112E1B39EB9800DAF6E6 /* MenuScene.h */,
+				C97D62761B49493100C477E2 /* PhysicsSene.cpp */,
+				C97D62771B49493100C477E2 /* PhysicsSene.h */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				C93C112F1B39EB9800DAF6E6 /* MenuScene.cpp in Sources */,
 				C9CA56261B34B0BB00DAE58E /* Player.cpp in Sources */,
+				C97D62781B49493100C477E2 /* PhysicsSene.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -540,6 +547,7 @@
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				C93C11301B39EB9800DAF6E6 /* MenuScene.cpp in Sources */,
+				C97D62791B49493100C477E2 /* PhysicsSene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				C966A3721B334360006FBEE9 /* TestingSceneOne.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,

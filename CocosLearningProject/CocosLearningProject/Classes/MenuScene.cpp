@@ -9,6 +9,7 @@
 #include "MenuScene.h"
 #include "ui/CocosGUI.h"
 #include "TestingSceneOne.h"
+#include "PhysicsSene.h"
 
 
 USING_NS_CC;
@@ -73,8 +74,8 @@ void MenuScene::initNewSceneButton(){
             case ui::Widget::TouchEventType::BEGAN:
                 break;
             case ui::Widget::TouchEventType::ENDED:
-                Director::getInstance()->replaceScene(TestingSceneOne::createScene());
-                CCLOG("btn lick");
+                CCLOG("btn click");
+                Director::getInstance()->replaceScene(PhysicsSene::createScene());
                 
                 break;
             default:
