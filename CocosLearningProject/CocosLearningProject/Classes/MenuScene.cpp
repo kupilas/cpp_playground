@@ -65,7 +65,7 @@ void MenuScene::makeHttpRequest(){
 void MenuScene::initNewSceneButton(){
     auto button2 = ui::Button::create("CloseNormal.png", "CloseSelected.png", "CloseNormal.png");
     
-    button2->setTitleText("22222");
+    button2->setTitleText("next scene");
     
     button2->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
         switch (type)
@@ -88,7 +88,7 @@ void MenuScene::initNewSceneButton(){
 void MenuScene::initHttpButton(){
     auto button = ui::Button::create("CloseNormal.png", "CloseSelected.png", "CloseNormal.png");
     
-    button->setTitleText("Button Text");
+    button->setTitleText("http request");
     
     button->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
         switch (type)
