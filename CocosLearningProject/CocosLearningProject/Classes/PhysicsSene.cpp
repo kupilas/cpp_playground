@@ -69,6 +69,8 @@ bool PhysicsSene::init()
         spriteBody->setAngularVelocity(30);
         spriteBody->setAngularDamping(1);
         spriteBody->setAngularVelocityLimit(200);
+        spriteBody->applyForce(Vect(500, 0));
+        
         
         sprite->setPhysicsBody(spriteBody);
         
