@@ -27,6 +27,7 @@ private:
     void setPhysicsWorld(PhysicsWorld *world){
         sceneWorld = world;
     }
+    bool onContactBegin(cocos2d::PhysicsContact &contact);
     
 };
 

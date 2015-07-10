@@ -8,6 +8,9 @@
 
 #include "PhysicsSene.h"
 
+#define BITMASK_SHAPE1 1
+#define BITMASK_SHAPE2 2
+
 Scene* PhysicsSene::createScene()
 {
     auto scene = Scene::createWithPhysics();
@@ -40,15 +43,51 @@ bool PhysicsSene::init()
     
     this->addChild(edgeNode);
     
-    auto sprite = Sprite::create( "CloseNormal.png" );
-    sprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    {
+        auto sprite = Sprite::create("CloseNormal.png");
+        sprite->setPosition( Point( visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y ) );
+        
+        auto spriteBody = PhysicsBody::createBox( sprite->getContentSize( ), PhysicsMaterial( 0, 1, 0 ) );
+        spriteBody->setCollisionBitmask(BITMASK_SHAPE1);
+        spriteBody->setContactTestBitmask(true);
+        
+        sprite->setPhysicsBody(spriteBody);
+        
+        this->addChild(sprite);
+    }
     
-    auto spriteBody = PhysicsBody::createCircle(sprite->getContentSize().width / 2, PhysicsMaterial(0, 1, 0));
-    sprite->setPhysicsBody(spriteBody);
+    {
+        auto sprite = Sprite::create("CloseNormal.png");
+        sprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 200));
+        
+        auto spriteBody = PhysicsBody::createBox(sprite->getContentSize(), PhysicsMaterial(0, 1, 0));
+        spriteBody->setCollisionBitmask(BITMASK_SHAPE2);
+        spriteBody->setContactTestBitmask(true);
+        
+        sprite->setPhysicsBody(spriteBody);
+        
+        this->addChild(sprite);
+    }
     
-    this->addChild(sprite);
+    auto contactListener = EventListenerPhysicsContact::create();
+    contactListener->onContactBegin = CC_CALLBACK_1(PhysicsSene::onContactBegin, this);
+    this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
     
     CCLOG("PhysicsSene::init()");
+    
+    return true;
+}
+
+bool PhysicsSene::onContactBegin(cocos2d::PhysicsContact &contact)
+{
+    PhysicsBody *a = contact.getShapeA()->getBody();
+    PhysicsBody *b = contact.getShapeB()->getBody();
+    
+    // check if the bodies have collided
+    if (( BITMASK_SHAPE1 == a->getCollisionBitmask() && BITMASK_SHAPE2 == b->getCollisionBitmask()) || (BITMASK_SHAPE2 == a->getCollisionBitmask() && BITMASK_SHAPE1 == b->getCollisionBitmask()))
+    {
+        CCLOG( "COLLISION HAS OCCURED" );
+    }
     
     return true;
 }
