@@ -50,6 +50,9 @@ bool PhysicsSene::init()
         auto spriteBody = PhysicsBody::createBox( sprite->getContentSize( ), PhysicsMaterial( 0, 1, 0 ) );
         spriteBody->setCollisionBitmask(BITMASK_SHAPE1);
         spriteBody->setContactTestBitmask(true);
+        spriteBody->setVelocity(Vec2(100, 1000));
+        spriteBody->setVelocityLimit(1000);
+        
         
         sprite->setPhysicsBody(spriteBody);
         
